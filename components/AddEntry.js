@@ -181,7 +181,7 @@ const styles = StyleSheet.create({
         marginLeft: 30,
         marginRight: 30,
     },
-})
+});
 
 function mapToStateProps(state) {
     const key = timeToString();
