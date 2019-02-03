@@ -1,30 +1,34 @@
 import React from 'react'
-import {View, Platform,StyleSheet} from 'react-native'
+import {View, SafeAreaView, Platform, StatusBar} from 'react-native'
 import {createStore} from "redux"
 import {Provider} from 'react-redux'
 import reducer from './reducers'
 import TabNav from './components/TabNav'
+import {Constants} from 'expo'
+import {purple} from "./utils/color";
 
 const store = createStore(reducer);
+
+function AppStatusBar({backgroundColor, ...props}) {
+    return (
+        <SafeAreaView styl={{backgroundColor, height: Constants.statusBarHeight}}>
+            <StatusBar translucent backgroundColor={backgroundColor} {...props}/>
+        </SafeAreaView>
+    )
+}
 
 export default class App extends React.Component {
     render() {
         return (
             <Provider store={store}>
-                <View style={styles.container}>
+                <View style={{flex: 1}}>
+                    <AppStatusBar backgroundColor={purple}
+                                  barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'}/>
                     <TabNav/>
                 </View>
             </Provider>
         );
     }
 }
-
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        marginTop: Platform.OS === 'ios' ? 30 : 20
-    }
-});
 
 
