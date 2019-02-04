@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
 export function getMetricMetaInfo(metric) {
     const info = {
         run: {
-            display: 'Run',
+            displayName: 'Run',
             max: 50,
             unit: 'm',
             step: 1,
@@ -42,7 +42,7 @@ export function getMetricMetaInfo(metric) {
             }
         },
         bike: {
-            display: 'Bike',
+            displayName: 'Bike',
             max: 100,
             unit: 'm',
             step: 1,
@@ -59,7 +59,7 @@ export function getMetricMetaInfo(metric) {
             }
         },
         swim: {
-            display: 'Swim',
+            displayName: 'Swim',
             max: 9900,
             unit: 'm',
             step: 1,
@@ -76,9 +76,9 @@ export function getMetricMetaInfo(metric) {
             }
         },
         sleep: {
-            display: 'Sleep',
+            displayName: 'Sleep',
             max: 24,
-            unit: 'hh',
+            unit: 'min',
             step: 1,
             type: 'slider',
             getIcon() {

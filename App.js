@@ -3,7 +3,7 @@ import {View, SafeAreaView, Platform, StatusBar} from 'react-native'
 import {createStore} from "redux"
 import {Provider} from 'react-redux'
 import reducer from './reducers'
-import TabNav from './components/TabNav'
+import StackNav from './components/StackNav'
 import {Constants} from 'expo'
 import {purple} from "./utils/color";
 
@@ -24,7 +24,7 @@ export default class App extends React.Component {
                 <View style={{flex: 1}}>
                     <AppStatusBar backgroundColor={purple}
                                   barStyle={Platform.OS === 'ios' ? 'dark-content' : 'light-content'}/>
-                    <TabNav/>
+                    <StackNav/>
                 </View>
             </Provider>
         );
