@@ -3,6 +3,7 @@ import {createStackNavigator, createAppContainer} from 'react-navigation'
 import TabNav from './TabNav'
 import EntryDetail from './EntryDetail'
 import {white, purple} from "../utils/color";
+import {Platform} from 'react-native'
 
 
 const MainNavigation = createStackNavigator({
@@ -15,9 +16,9 @@ const MainNavigation = createStackNavigator({
     EntryDetail: {
         screen: EntryDetail,
         navigationOptions: ({navigation}) => ({
-            headerTintColor: white,
+            headerTintColor: Platform.OS === 'ios' ? purple : white,
             headerStyle: {
-                backgroundColor: purple,
+                backgroundColor: Platform.OS === 'ios' ? white : purple,
             },
         }),
     },
